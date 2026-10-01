@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Arduino Uno USB Vendor/Product IDs -->
+    <usb-device vendor-id="9025" product-id="67" /> <!-- Arduino Uno R3 -->
+    <usb-device vendor-id="9025" product-id="66" /> <!-- Arduino Uno R3 (alternate) -->
+    <usb-device vendor-id="9025" product-id="0043" /> <!-- Arduino Uno (hex) -->
+    <usb-device vendor-id="7523" product-id="21781" /> <!-- CH340 clone -->
+    <usb-device vendor-id="1027" product-id="24577" /> <!-- FTDI FT232 -->
+    <usb-device vendor-id="4292" product-id="60000" /> <!-- CP2102 -->
+</resources>

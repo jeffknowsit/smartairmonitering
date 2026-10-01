@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.smartair.app-mergeDebugResources-57:/values-v16/values-v16.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\JEFF JOSEPH\\.gradle\\caches\\transforms-4\\3f8d3e9cc339b0a4e6df3d38961cde85\\transformed\\core-1.12.0\\res\\values-v16\\values-v16.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "65",
+                        "endOffsets": "116"
+                    }
+                }
+            ]
+        }
+    ]
+}

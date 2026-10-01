@@ -1,0 +1,6 @@
+[
+    {
+        "merged": "com.smartair.app-debug-59:/xml_device_filter.xml.flat",
+        "source": "com.smartair.app-main-61:/xml/device_filter.xml"
+    }
+]
