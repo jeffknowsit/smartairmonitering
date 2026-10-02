@@ -142,7 +142,7 @@ private fun MockModePills(
                     style = MaterialTheme.typography.bodySmall.copy(
                         fontWeight = if (isSelected) FontWeight.SemiBold else FontWeight.Medium
                     ),
-                    color = if (isSelected) Color.White else SmartAirColors.OnSurfaceVariant,
+                    color = if (isSelected) SmartAirColors.OnPrimary else SmartAirColors.OnSurfaceVariant,
                     modifier = Modifier.padding(horizontal = 12.dp, vertical = 6.dp)
                 )
             }

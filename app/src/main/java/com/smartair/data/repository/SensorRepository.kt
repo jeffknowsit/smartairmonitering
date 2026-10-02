@@ -18,7 +18,7 @@ class SensorRepository(
 ) {
     private var isMockMode = true
     private var lastStoredTimestamp = 0L
-    private var storageIntervalMs = 10_000L // 10 seconds default
+    private var storageIntervalMs = 2_000L // 2 seconds for live graphs
 
     // Expose readings based on current mode
     val currentReading: Flow<SensorReading>

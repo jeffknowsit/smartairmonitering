@@ -3,11 +3,13 @@ package com.smartair.ai
 import com.smartair.data.model.SensorReading
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
+import org.json.JSONObject
 import java.io.BufferedReader
 import java.io.InputStreamReader
 import java.io.OutputStreamWriter
 import java.net.HttpURLConnection
 import java.net.URL
+import com.google.ai.client.generativeai.GenerativeModel
 
 /**
  * AI service interface - replaceable for production.
@@ -205,5 +207,39 @@ class LocalAiService : AiService {
                 "• MQ-5 Gas: ${reading.gas ?: "--"} raw (${trends["gas_trend"] ?: "no data"})\n" +
                 "• Ventilation: ${if (reading.fan) "Active" else "Off"}\n" +
                 "• Status: ${reading.status.name}"
+    }
+}
+
+class GeminiAiService(private val apiKey: String) : AiService {
+    
+    private val generativeModel = GenerativeModel(
+        modelName = "gemini-3.1-flash-lite",
+        apiKey = apiKey
+    )
+
+    override suspend fun getInsight(reading: SensorReading, trends: Map<String, String>): String {
+        val prompt = "Generate a very brief, crisp 1-2 sentence insight for these sensor readings: Temperature ${reading.temperature}°C (${trends["temperature_trend"]}), Humidity ${reading.humidity}% (${trends["humidity_trend"]}), Dust ${reading.dust} (${trends["dust_trend"]}), Gas ${reading.gas} (${trends["gas_trend"]}). Fan is ${if(reading.fan) "on" else "off"}. Keep it extremely minimal and avoid large paragraphs."
+        return callGemini(prompt) ?: LocalAiService().getInsight(reading, trends)
+    }
+
+    override suspend fun chat(
+        userMessage: String,
+        reading: SensorReading,
+        trends: Map<String, String>
+    ): String {
+        val prompt = "Context: Temperature ${reading.temperature}°C, Humidity ${reading.humidity}%, Dust ${reading.dust}, Gas ${reading.gas}. Fan is ${if(reading.fan) "on" else "off"}.\nUser says: $userMessage\nSystem Instructions: You are a smart room assistant. You MUST provide very crisp, minimal, and direct responses. Do NOT use large paragraphs. Answer strictly in a brief, concise manner."
+        return callGemini(prompt) ?: LocalAiService().chat(userMessage, reading, trends)
+    }
+
+    override fun isAvailable(): Boolean = true
+
+    private suspend fun callGemini(prompt: String): String? {
+        return try {
+            val response = generativeModel.generateContent(prompt)
+            response.text ?: "AI returned an empty response"
+        } catch (e: Exception) {
+            e.printStackTrace()
+            "AI API Error: ${e.message}"
+        }
     }
 }

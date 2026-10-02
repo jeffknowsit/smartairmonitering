@@ -54,6 +54,7 @@ fun AiScreen(
         modifier = modifier
             .fillMaxSize()
             .padding(horizontal = 20.dp)
+            .imePadding()
     ) {
         LazyColumn(
             state = listState,
@@ -469,7 +470,7 @@ private fun UserBubble(message: String) {
             Text(
                 text = message,
                 style = MaterialTheme.typography.bodyMedium,
-                color = Color.White,
+                color = SmartAirColors.OnPrimary,
                 modifier = Modifier.padding(horizontal = 16.dp, vertical = 12.dp),
                 lineHeight = 22.sp
             )
@@ -583,7 +584,7 @@ private fun ChatInput(
                     imageVector = Icons.Outlined.ArrowUpward,
                     contentDescription = "Send",
                     modifier = Modifier.size(20.dp),
-                    tint = Color.White
+                    tint = SmartAirColors.OnPrimary
                 )
             }
         }

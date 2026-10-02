@@ -1,9 +1,10 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\SMART AIR\SmartAir\app\src\main\AndroidManifest.xml:2:1-52:12
-INJECTED from D:\SMART AIR\SmartAir\app\src\main\AndroidManifest.xml:2:1-52:12
-INJECTED from D:\SMART AIR\SmartAir\app\src\main\AndroidManifest.xml:2:1-52:12
-INJECTED from D:\SMART AIR\SmartAir\app\src\main\AndroidManifest.xml:2:1-52:12
+ADDED from D:\SMART AIR\SmartAir\app\src\main\AndroidManifest.xml:2:1-54:12
+INJECTED from D:\SMART AIR\SmartAir\app\src\main\AndroidManifest.xml:2:1-54:12
+INJECTED from D:\SMART AIR\SmartAir\app\src\main\AndroidManifest.xml:2:1-54:12
+INJECTED from D:\SMART AIR\SmartAir\app\src\main\AndroidManifest.xml:2:1-54:12
+MERGED from [com.google.ai.client.generativeai:generativeai:0.2.2] C:\Users\JEFF JOSEPH\.gradle\caches\transforms-4\492465ddb8003b65e81cce5b3cd51aa4\transformed\generativeai-0.2.2\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.navigation:navigation-common:2.7.7] C:\Users\JEFF JOSEPH\.gradle\caches\transforms-4\4d847f7b3cfde461070be8c4bc49af5a\transformed\navigation-common-2.7.7\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.navigation:navigation-runtime:2.7.7] C:\Users\JEFF JOSEPH\.gradle\caches\transforms-4\f37cb4b0344d7278cee11579afb83c99\transformed\navigation-runtime-2.7.7\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.navigation:navigation-common-ktx:2.7.7] C:\Users\JEFF JOSEPH\.gradle\caches\transforms-4\77776db089b11b2fe4d114fa1311e050\transformed\navigation-common-ktx-2.7.7\AndroidManifest.xml:2:1-7:12
@@ -54,13 +55,13 @@ MERGED from [androidx.datastore:datastore-preferences:1.0.0] C:\Users\JEFF JOSEP
 MERGED from [androidx.sqlite:sqlite-framework:2.4.0] C:\Users\JEFF JOSEPH\.gradle\caches\transforms-4\b06988d18889e35984c5a1096d9fe223\transformed\sqlite-framework-2.4.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.sqlite:sqlite:2.4.0] C:\Users\JEFF JOSEPH\.gradle\caches\transforms-4\b72422b44a7208d425f9107f412697f7\transformed\sqlite-2.4.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.datastore:datastore:1.0.0] C:\Users\JEFF JOSEPH\.gradle\caches\transforms-4\6600274d1eed7ff47fb2fe972134caf6\transformed\datastore-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\JEFF JOSEPH\.gradle\caches\transforms-4\08d8d851c0b547c133c8a7b71afc59c7\transformed\profileinstaller-1.3.0\AndroidManifest.xml:17:1-55:12
 MERGED from [androidx.compose.runtime:runtime-saveable-android:1.6.1] C:\Users\JEFF JOSEPH\.gradle\caches\transforms-4\a122ea04aa1923fdf313c02786469f12\transformed\runtime-saveable-release\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.compose.runtime:runtime-android:1.6.1] C:\Users\JEFF JOSEPH\.gradle\caches\transforms-4\262b7353a5214256f8eea196ee3b6d17\transformed\runtime-release\AndroidManifest.xml:2:1-7:12
 MERGED from [com.github.mik3y:usb-serial-for-android:3.7.3] C:\Users\JEFF JOSEPH\.gradle\caches\transforms-4\21598105edf9aa6d1a4aaa5d711cdae4\transformed\usb-serial-for-android-3.7.3\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\JEFF JOSEPH\.gradle\caches\transforms-4\1c056d5f98561a594c712b2e2a7f5988\transformed\core-runtime-2.2.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\JEFF JOSEPH\.gradle\caches\transforms-4\bbce83b875f5af86346d748148d5ac89\transformed\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\JEFF JOSEPH\.gradle\caches\transforms-4\d92372ce5e9152ab028207dffa784e63\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:17:1-27:12
-MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\JEFF JOSEPH\.gradle\caches\transforms-4\08d8d851c0b547c133c8a7b71afc59c7\transformed\profileinstaller-1.3.0\AndroidManifest.xml:17:1-55:12
 MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\JEFF JOSEPH\.gradle\caches\transforms-4\fd5f490d314ffa76830f70b1819f971d\transformed\startup-runtime-1.1.1\AndroidManifest.xml:17:1-33:12
 MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\JEFF JOSEPH\.gradle\caches\transforms-4\4c058578e8d92a15e701f12cf0509767\transformed\tracing-1.0.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.annotation:annotation-experimental:1.4.0] C:\Users\JEFF JOSEPH\.gradle\caches\transforms-4\453041f976d885c291668e4d1cea96f9\transformed\annotation-experimental-1.4.0\AndroidManifest.xml:2:1-7:12
@@ -102,6 +103,8 @@ ADDED from D:\SMART AIR\SmartAir\app\src\main\AndroidManifest.xml:19:5-94
 		ADDED from D:\SMART AIR\SmartAir\app\src\main\AndroidManifest.xml:19:22-91
 uses-permission#android.permission.INTERNET
 ADDED from D:\SMART AIR\SmartAir\app\src\main\AndroidManifest.xml:22:5-67
+MERGED from [com.google.ai.client.generativeai:generativeai:0.2.2] C:\Users\JEFF JOSEPH\.gradle\caches\transforms-4\492465ddb8003b65e81cce5b3cd51aa4\transformed\generativeai-0.2.2\AndroidManifest.xml:22:5-67
+MERGED from [com.google.ai.client.generativeai:generativeai:0.2.2] C:\Users\JEFF JOSEPH\.gradle\caches\transforms-4\492465ddb8003b65e81cce5b3cd51aa4\transformed\generativeai-0.2.2\AndroidManifest.xml:22:5-67
 	android:name
 		ADDED from D:\SMART AIR\SmartAir\app\src\main\AndroidManifest.xml:22:22-64
 uses-permission#android.permission.ACCESS_NETWORK_STATE
@@ -109,8 +112,8 @@ ADDED from D:\SMART AIR\SmartAir\app\src\main\AndroidManifest.xml:23:5-79
 	android:name
 		ADDED from D:\SMART AIR\SmartAir\app\src\main\AndroidManifest.xml:23:22-76
 application
-ADDED from D:\SMART AIR\SmartAir\app\src\main\AndroidManifest.xml:25:5-51:19
-INJECTED from D:\SMART AIR\SmartAir\app\src\main\AndroidManifest.xml:25:5-51:19
+ADDED from D:\SMART AIR\SmartAir\app\src\main\AndroidManifest.xml:25:5-53:19
+INJECTED from D:\SMART AIR\SmartAir\app\src\main\AndroidManifest.xml:25:5-53:19
 MERGED from [androidx.compose.ui:ui-tooling-android:1.6.1] C:\Users\JEFF JOSEPH\.gradle\caches\transforms-4\e1fed82102995482228a315452a96dee\transformed\ui-tooling-release\AndroidManifest.xml:22:5-26:19
 MERGED from [androidx.compose.ui:ui-tooling-android:1.6.1] C:\Users\JEFF JOSEPH\.gradle\caches\transforms-4\e1fed82102995482228a315452a96dee\transformed\ui-tooling-release\AndroidManifest.xml:22:5-26:19
 MERGED from [androidx.emoji2:emoji2:1.3.0] C:\Users\JEFF JOSEPH\.gradle\caches\transforms-4\3ac418d83ac211860b6ca5bedaad9e4c\transformed\emoji2-1.3.0\AndroidManifest.xml:23:5-33:19
@@ -123,10 +126,10 @@ MERGED from [androidx.core:core:1.12.0] C:\Users\JEFF JOSEPH\.gradle\caches\tran
 MERGED from [androidx.core:core:1.12.0] C:\Users\JEFF JOSEPH\.gradle\caches\transforms-4\3f8d3e9cc339b0a4e6df3d38961cde85\transformed\core-1.12.0\AndroidManifest.xml:28:5-89
 MERGED from [androidx.room:room-runtime:2.6.1] C:\Users\JEFF JOSEPH\.gradle\caches\transforms-4\822a8e519ed09a2ce6836d6cc971e591\transformed\room-runtime-2.6.1\AndroidManifest.xml:23:5-29:19
 MERGED from [androidx.room:room-runtime:2.6.1] C:\Users\JEFF JOSEPH\.gradle\caches\transforms-4\822a8e519ed09a2ce6836d6cc971e591\transformed\room-runtime-2.6.1\AndroidManifest.xml:23:5-29:19
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\JEFF JOSEPH\.gradle\caches\transforms-4\d92372ce5e9152ab028207dffa784e63\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\JEFF JOSEPH\.gradle\caches\transforms-4\d92372ce5e9152ab028207dffa784e63\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
 MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\JEFF JOSEPH\.gradle\caches\transforms-4\08d8d851c0b547c133c8a7b71afc59c7\transformed\profileinstaller-1.3.0\AndroidManifest.xml:23:5-53:19
 MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\JEFF JOSEPH\.gradle\caches\transforms-4\08d8d851c0b547c133c8a7b71afc59c7\transformed\profileinstaller-1.3.0\AndroidManifest.xml:23:5-53:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\JEFF JOSEPH\.gradle\caches\transforms-4\d92372ce5e9152ab028207dffa784e63\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\JEFF JOSEPH\.gradle\caches\transforms-4\d92372ce5e9152ab028207dffa784e63\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
 MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\JEFF JOSEPH\.gradle\caches\transforms-4\fd5f490d314ffa76830f70b1819f971d\transformed\startup-runtime-1.1.1\AndroidManifest.xml:25:5-31:19
 MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\JEFF JOSEPH\.gradle\caches\transforms-4\fd5f490d314ffa76830f70b1819f971d\transformed\startup-runtime-1.1.1\AndroidManifest.xml:25:5-31:19
 	android:extractNativeLibs
@@ -134,53 +137,59 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\JEFF JOSEPH\.gradl
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.12.0] C:\Users\JEFF JOSEPH\.gradle\caches\transforms-4\3f8d3e9cc339b0a4e6df3d38961cde85\transformed\core-1.12.0\AndroidManifest.xml:28:18-86
 	android:supportsRtl
-		ADDED from D:\SMART AIR\SmartAir\app\src\main\AndroidManifest.xml:29:9-35
+		ADDED from D:\SMART AIR\SmartAir\app\src\main\AndroidManifest.xml:31:9-35
 	android:label
-		ADDED from D:\SMART AIR\SmartAir\app\src\main\AndroidManifest.xml:28:9-33
+		ADDED from D:\SMART AIR\SmartAir\app\src\main\AndroidManifest.xml:30:9-33
+	android:roundIcon
+		ADDED from D:\SMART AIR\SmartAir\app\src\main\AndroidManifest.xml:29:9-48
 	tools:targetApi
-		ADDED from D:\SMART AIR\SmartAir\app\src\main\AndroidManifest.xml:31:9-29
+		ADDED from D:\SMART AIR\SmartAir\app\src\main\AndroidManifest.xml:33:9-29
+	android:icon
+		ADDED from D:\SMART AIR\SmartAir\app\src\main\AndroidManifest.xml:28:9-43
 	android:allowBackup
 		ADDED from D:\SMART AIR\SmartAir\app\src\main\AndroidManifest.xml:27:9-35
 	android:theme
-		ADDED from D:\SMART AIR\SmartAir\app\src\main\AndroidManifest.xml:30:9-46
+		ADDED from D:\SMART AIR\SmartAir\app\src\main\AndroidManifest.xml:32:9-46
 	android:name
 		ADDED from D:\SMART AIR\SmartAir\app\src\main\AndroidManifest.xml:26:9-36
 activity#com.smartair.MainActivity
-ADDED from D:\SMART AIR\SmartAir\app\src\main\AndroidManifest.xml:33:9-50:20
+ADDED from D:\SMART AIR\SmartAir\app\src\main\AndroidManifest.xml:35:9-52:20
 	android:windowSoftInputMode
-		ADDED from D:\SMART AIR\SmartAir\app\src\main\AndroidManifest.xml:36:13-55
+		ADDED from D:\SMART AIR\SmartAir\app\src\main\AndroidManifest.xml:38:13-55
 	android:exported
-		ADDED from D:\SMART AIR\SmartAir\app\src\main\AndroidManifest.xml:35:13-36
+		ADDED from D:\SMART AIR\SmartAir\app\src\main\AndroidManifest.xml:37:13-36
 	android:theme
-		ADDED from D:\SMART AIR\SmartAir\app\src\main\AndroidManifest.xml:37:13-50
+		ADDED from D:\SMART AIR\SmartAir\app\src\main\AndroidManifest.xml:39:13-50
 	android:name
-		ADDED from D:\SMART AIR\SmartAir\app\src\main\AndroidManifest.xml:34:13-41
+		ADDED from D:\SMART AIR\SmartAir\app\src\main\AndroidManifest.xml:36:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from D:\SMART AIR\SmartAir\app\src\main\AndroidManifest.xml:38:13-41:29
+ADDED from D:\SMART AIR\SmartAir\app\src\main\AndroidManifest.xml:40:13-43:29
 action#android.intent.action.MAIN
-ADDED from D:\SMART AIR\SmartAir\app\src\main\AndroidManifest.xml:39:17-69
+ADDED from D:\SMART AIR\SmartAir\app\src\main\AndroidManifest.xml:41:17-69
 	android:name
-		ADDED from D:\SMART AIR\SmartAir\app\src\main\AndroidManifest.xml:39:25-66
+		ADDED from D:\SMART AIR\SmartAir\app\src\main\AndroidManifest.xml:41:25-66
 category#android.intent.category.LAUNCHER
-ADDED from D:\SMART AIR\SmartAir\app\src\main\AndroidManifest.xml:40:17-77
+ADDED from D:\SMART AIR\SmartAir\app\src\main\AndroidManifest.xml:42:17-77
 	android:name
-		ADDED from D:\SMART AIR\SmartAir\app\src\main\AndroidManifest.xml:40:27-74
+		ADDED from D:\SMART AIR\SmartAir\app\src\main\AndroidManifest.xml:42:27-74
 intent-filter#action:name:android.hardware.usb.action.USB_DEVICE_ATTACHED
-ADDED from D:\SMART AIR\SmartAir\app\src\main\AndroidManifest.xml:44:13-46:29
+ADDED from D:\SMART AIR\SmartAir\app\src\main\AndroidManifest.xml:46:13-48:29
 action#android.hardware.usb.action.USB_DEVICE_ATTACHED
-ADDED from D:\SMART AIR\SmartAir\app\src\main\AndroidManifest.xml:45:17-90
+ADDED from D:\SMART AIR\SmartAir\app\src\main\AndroidManifest.xml:47:17-90
 	android:name
-		ADDED from D:\SMART AIR\SmartAir\app\src\main\AndroidManifest.xml:45:25-87
+		ADDED from D:\SMART AIR\SmartAir\app\src\main\AndroidManifest.xml:47:25-87
 meta-data#android.hardware.usb.action.USB_DEVICE_ATTACHED
-ADDED from D:\SMART AIR\SmartAir\app\src\main\AndroidManifest.xml:47:13-49:57
+ADDED from D:\SMART AIR\SmartAir\app\src\main\AndroidManifest.xml:49:13-51:57
 	android:resource
-		ADDED from D:\SMART AIR\SmartAir\app\src\main\AndroidManifest.xml:49:17-54
+		ADDED from D:\SMART AIR\SmartAir\app\src\main\AndroidManifest.xml:51:17-54
 	android:name
-		ADDED from D:\SMART AIR\SmartAir\app\src\main\AndroidManifest.xml:48:17-79
+		ADDED from D:\SMART AIR\SmartAir\app\src\main\AndroidManifest.xml:50:17-79
 uses-sdk
 INJECTED from D:\SMART AIR\SmartAir\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from D:\SMART AIR\SmartAir\app\src\main\AndroidManifest.xml
 INJECTED from D:\SMART AIR\SmartAir\app\src\main\AndroidManifest.xml
+MERGED from [com.google.ai.client.generativeai:generativeai:0.2.2] C:\Users\JEFF JOSEPH\.gradle\caches\transforms-4\492465ddb8003b65e81cce5b3cd51aa4\transformed\generativeai-0.2.2\AndroidManifest.xml:20:5-44
+MERGED from [com.google.ai.client.generativeai:generativeai:0.2.2] C:\Users\JEFF JOSEPH\.gradle\caches\transforms-4\492465ddb8003b65e81cce5b3cd51aa4\transformed\generativeai-0.2.2\AndroidManifest.xml:20:5-44
 MERGED from [androidx.navigation:navigation-common:2.7.7] C:\Users\JEFF JOSEPH\.gradle\caches\transforms-4\4d847f7b3cfde461070be8c4bc49af5a\transformed\navigation-common-2.7.7\AndroidManifest.xml:20:5-44
 MERGED from [androidx.navigation:navigation-common:2.7.7] C:\Users\JEFF JOSEPH\.gradle\caches\transforms-4\4d847f7b3cfde461070be8c4bc49af5a\transformed\navigation-common-2.7.7\AndroidManifest.xml:20:5-44
 MERGED from [androidx.navigation:navigation-runtime:2.7.7] C:\Users\JEFF JOSEPH\.gradle\caches\transforms-4\f37cb4b0344d7278cee11579afb83c99\transformed\navigation-runtime-2.7.7\AndroidManifest.xml:20:5-44
@@ -281,6 +290,8 @@ MERGED from [androidx.sqlite:sqlite:2.4.0] C:\Users\JEFF JOSEPH\.gradle\caches\t
 MERGED from [androidx.sqlite:sqlite:2.4.0] C:\Users\JEFF JOSEPH\.gradle\caches\transforms-4\b72422b44a7208d425f9107f412697f7\transformed\sqlite-2.4.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.datastore:datastore:1.0.0] C:\Users\JEFF JOSEPH\.gradle\caches\transforms-4\6600274d1eed7ff47fb2fe972134caf6\transformed\datastore-1.0.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.datastore:datastore:1.0.0] C:\Users\JEFF JOSEPH\.gradle\caches\transforms-4\6600274d1eed7ff47fb2fe972134caf6\transformed\datastore-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\JEFF JOSEPH\.gradle\caches\transforms-4\08d8d851c0b547c133c8a7b71afc59c7\transformed\profileinstaller-1.3.0\AndroidManifest.xml:21:5-44
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\JEFF JOSEPH\.gradle\caches\transforms-4\08d8d851c0b547c133c8a7b71afc59c7\transformed\profileinstaller-1.3.0\AndroidManifest.xml:21:5-44
 MERGED from [androidx.compose.runtime:runtime-saveable-android:1.6.1] C:\Users\JEFF JOSEPH\.gradle\caches\transforms-4\a122ea04aa1923fdf313c02786469f12\transformed\runtime-saveable-release\AndroidManifest.xml:5:5-44
 MERGED from [androidx.compose.runtime:runtime-saveable-android:1.6.1] C:\Users\JEFF JOSEPH\.gradle\caches\transforms-4\a122ea04aa1923fdf313c02786469f12\transformed\runtime-saveable-release\AndroidManifest.xml:5:5-44
 MERGED from [androidx.compose.runtime:runtime-android:1.6.1] C:\Users\JEFF JOSEPH\.gradle\caches\transforms-4\262b7353a5214256f8eea196ee3b6d17\transformed\runtime-release\AndroidManifest.xml:5:5-44
@@ -293,8 +304,6 @@ MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\JEFF JOSEPH\.gra
 MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\JEFF JOSEPH\.gradle\caches\transforms-4\bbce83b875f5af86346d748148d5ac89\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\JEFF JOSEPH\.gradle\caches\transforms-4\d92372ce5e9152ab028207dffa784e63\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\JEFF JOSEPH\.gradle\caches\transforms-4\d92372ce5e9152ab028207dffa784e63\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\JEFF JOSEPH\.gradle\caches\transforms-4\08d8d851c0b547c133c8a7b71afc59c7\transformed\profileinstaller-1.3.0\AndroidManifest.xml:21:5-44
-MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\JEFF JOSEPH\.gradle\caches\transforms-4\08d8d851c0b547c133c8a7b71afc59c7\transformed\profileinstaller-1.3.0\AndroidManifest.xml:21:5-44
 MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\JEFF JOSEPH\.gradle\caches\transforms-4\fd5f490d314ffa76830f70b1819f971d\transformed\startup-runtime-1.1.1\AndroidManifest.xml:21:5-23:41
 MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\JEFF JOSEPH\.gradle\caches\transforms-4\fd5f490d314ffa76830f70b1819f971d\transformed\startup-runtime-1.1.1\AndroidManifest.xml:21:5-23:41
 MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\JEFF JOSEPH\.gradle\caches\transforms-4\4c058578e8d92a15e701f12cf0509767\transformed\tracing-1.0.0\AndroidManifest.xml:20:5-22:41

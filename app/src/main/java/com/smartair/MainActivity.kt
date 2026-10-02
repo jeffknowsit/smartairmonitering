@@ -11,6 +11,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.animation.*
 import androidx.compose.animation.core.*
 import androidx.compose.foundation.*
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
@@ -75,9 +76,20 @@ class MainActivity : ComponentActivity() {
         }
 
         setContent {
-            SmartAirTheme {
-                val settings by viewModel.settings.collectAsState()
-
+            val settings by viewModel.settings.collectAsState()
+            
+            val isSystemDark = isSystemInDarkTheme()
+            val darkTheme = when (settings.appearance) {
+                "Dark" -> true
+                "Light" -> false
+                else -> isSystemDark
+            }
+            
+            LaunchedEffect(darkTheme) {
+                com.smartair.ui.theme.SmartAirThemeState.isDark = darkTheme
+            }
+            
+            SmartAirTheme(darkTheme = darkTheme) {
                 // Keep screen awake if enabled
                 LaunchedEffect(settings.keepScreenAwake) {
                     if (settings.keepScreenAwake) {
@@ -318,7 +330,7 @@ private fun SmartAirTopBar(
                         Icon(
                             imageVector = Icons.Outlined.Person,
                             contentDescription = null,
-                            tint = Color.White,
+                            tint = SmartAirColors.OnPrimary,
                             modifier = Modifier.size(18.dp)
                         )
                     }
@@ -379,7 +391,7 @@ private fun SettingsTopBar(onBack: () -> Unit) {
                     Icon(
                         imageVector = Icons.Outlined.Person,
                         contentDescription = null,
-                        tint = Color.White,
+                        tint = SmartAirColors.OnPrimary,
                         modifier = Modifier.size(18.dp)
                     )
                 }

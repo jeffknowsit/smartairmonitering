@@ -1,6 +1,10 @@
 [
     {
-        "merged": "com.smartair.app-debug-59:/xml_device_filter.xml.flat",
-        "source": "com.smartair.app-main-61:/xml/device_filter.xml"
+        "merged": "C:\\Users\\JEFF JOSEPH\\.gradle\\daemon\\8.7\\com.smartair.app-debug-59:\\xml_device_filter.xml.flat",
+        "source": "C:\\Users\\JEFF JOSEPH\\.gradle\\daemon\\8.7\\com.smartair.app-main-61:\\xml\\device_filter.xml"
+    },
+    {
+        "merged": "com.smartair.app-debug-59:/mipmap-xxhdpi_ic_launcher.jpg.flat",
+        "source": "com.smartair.app-main-61:/mipmap-xxhdpi/ic_launcher.jpg"
     }
 ]

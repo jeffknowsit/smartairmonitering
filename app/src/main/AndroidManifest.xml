@@ -25,6 +25,8 @@
     <application
         android:name=".SmartAirApp"
         android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher"
         android:label="SmartAir"
         android:supportsRtl="true"
         android:theme="@style/Theme.SmartAir"

@@ -180,7 +180,7 @@ private fun MetricFilterChips(
                         style = MaterialTheme.typography.bodySmall.copy(
                             fontWeight = if (isSelected) FontWeight.Medium else FontWeight.Normal
                         ),
-                        color = if (isSelected) Color.White
+                        color = if (isSelected) SmartAirColors.OnPrimary
                                 else SmartAirColors.OnSurfaceVariant
                     )
                     if (isSelected) {
@@ -607,7 +607,7 @@ private fun VentilationImpactBanner() {
                             Icon(
                                 imageVector = Icons.Outlined.Air,
                                 contentDescription = null,
-                                tint = Color.White,
+                                tint = SmartAirColors.OnPrimaryContainer,
                                 modifier = Modifier.size(20.dp)
                             )
                         }

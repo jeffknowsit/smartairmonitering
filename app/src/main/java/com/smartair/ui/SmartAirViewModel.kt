@@ -5,6 +5,7 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import com.smartair.ai.AiService
 import com.smartair.ai.LocalAiService
+import com.smartair.ai.GeminiAiService
 import com.smartair.alerts.notification.NotificationService
 import com.smartair.alerts.sms.SmsService
 import com.smartair.core.status.StatusEngine
@@ -28,7 +29,7 @@ class SmartAirViewModel(application: Application) : AndroidViewModel(application
     private val mockService = MockArduinoService()
     private val notificationService = NotificationService(application)
     private val smsService = SmsService(application)
-    private val aiService: AiService = LocalAiService()
+    private val aiService: AiService = GeminiAiService(com.smartair.BuildConfig.GEMINI_API_KEY)
 
     val repository = SensorRepository(
         dao = database.sensorReadingDao(),
@@ -111,13 +112,25 @@ class SmartAirViewModel(application: Application) : AndroidViewModel(application
 
         // Status transition detection for alerts
         if (previousStatus != null && previousStatus != status) {
-            if (status == AirStatus.CRITICAL && currentSettings.smsEnabled) {
-                // User requested SMS INSTEAD of standard notification for critical alerts
-                smsService.onCriticalAlert(
-                    status = status,
-                    recipientNumber = currentSettings.smsRecipient,
-                    smsEnabled = currentSettings.smsEnabled
-                )
+            if (status == AirStatus.CRITICAL) {
+                // Play emergency buzz from phone speaker
+                try {
+                    val toneGenerator = android.media.ToneGenerator(android.media.AudioManager.STREAM_ALARM, 100)
+                    toneGenerator.startTone(android.media.ToneGenerator.TONE_CDMA_EMERGENCY_RINGBACK, 1500)
+                } catch (e: Exception) {
+                    e.printStackTrace()
+                }
+
+                if (currentSettings.smsEnabled) {
+                    // User requested SMS INSTEAD of standard notification for critical alerts
+                    smsService.onCriticalAlert(
+                        status = status,
+                        recipientNumber = currentSettings.smsRecipient,
+                        smsEnabled = currentSettings.smsEnabled
+                    )
+                } else {
+                    notificationService.onStatusChange(status, previousStatus)
+                }
             } else {
                 // Standard notification for all other state changes
                 notificationService.onStatusChange(status, previousStatus)
@@ -136,6 +149,9 @@ class SmartAirViewModel(application: Application) : AndroidViewModel(application
                 isMockMode = _settings.value.isMockMode
             )
         }
+        
+        // Live update the history section
+        loadHistory()
     }
 
     fun refreshAiInsight() {

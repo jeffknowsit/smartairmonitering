@@ -1,7 +1,11 @@
 package com.smartair.ui.theme
 
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily
@@ -24,59 +28,64 @@ val PlusJakartaSans = FontFamily(
     Font(googleFont = GoogleFont("Plus Jakarta Sans"), fontProvider = provider, weight = FontWeight.Bold),
 )
 
+
+object SmartAirThemeState {
+    var isDark by mutableStateOf(false)
+}
+
 // ─── Stitch "Aether Ambient" Color Palette ───
 object SmartAirColors {
     // Primary teal tones
-    val Primary = Color(0xFF00685F)
-    val PrimaryContainer = Color(0xFF008378)
-    val OnPrimary = Color.White
-    val OnPrimaryContainer = Color(0xFFF4FFFC)
+    val Primary get() = if (SmartAirThemeState.isDark) Color(0xFF89F5E7) else Color(0xFF00685F)
+    val PrimaryContainer get() = if (SmartAirThemeState.isDark) Color(0xFF004F47) else Color(0xFF008378)
+    val OnPrimary get() = if (SmartAirThemeState.isDark) Color(0xFF003731) else Color.White
+    val OnPrimaryContainer get() = if (SmartAirThemeState.isDark) Color(0xFF89F5E7) else Color(0xFFF4FFFC)
 
     // Secondary
-    val Secondary = Color(0xFF006B5F)
-    val SecondaryContainer = Color(0xFF6DF5E1)
-    val OnSecondaryContainer = Color(0xFF006F64)
+    val Secondary get() = if (SmartAirThemeState.isDark) Color(0xFF71F8E4) else Color(0xFF006B5F)
+    val SecondaryContainer get() = if (SmartAirThemeState.isDark) Color(0xFF005047) else Color(0xFF6DF5E1)
+    val OnSecondaryContainer get() = if (SmartAirThemeState.isDark) Color(0xFF71F8E4) else Color(0xFF006F64)
 
     // Tertiary
-    val Tertiary = Color(0xFF006860)
-    val TertiaryContainer = Color(0xFF248279)
+    val Tertiary get() = if (SmartAirThemeState.isDark) Color(0xFF9CF2E8) else Color(0xFF006860)
+    val TertiaryContainer get() = if (SmartAirThemeState.isDark) Color(0xFF00504B) else Color(0xFF248279)
 
     // Surface hierarchy
-    val Surface = Color(0xFFFAF8FF)
-    val SurfaceContainerLowest = Color.White
-    val SurfaceContainerLow = Color(0xFFF2F3FF)
-    val SurfaceContainer = Color(0xFFEAEDFF)
-    val SurfaceContainerHigh = Color(0xFFE2E7FF)
-    val SurfaceContainerHighest = Color(0xFFDAE2FD)
-    val SurfaceVariant = Color(0xFFDAE2FD)
+    val Surface get() = if (SmartAirThemeState.isDark) Color(0xFF191C1C) else Color(0xFFFAF8FF)
+    val SurfaceContainerLowest get() = if (SmartAirThemeState.isDark) Color(0xFF0F1414) else Color.White
+    val SurfaceContainerLow get() = if (SmartAirThemeState.isDark) Color(0xFF171A1A) else Color(0xFFF2F3FF)
+    val SurfaceContainer get() = if (SmartAirThemeState.isDark) Color(0xFF1E2121) else Color(0xFFEAEDFF)
+    val SurfaceContainerHigh get() = if (SmartAirThemeState.isDark) Color(0xFF282B2B) else Color(0xFFE2E7FF)
+    val SurfaceContainerHighest get() = if (SmartAirThemeState.isDark) Color(0xFF333636) else Color(0xFFDAE2FD)
+    val SurfaceVariant get() = if (SmartAirThemeState.isDark) Color(0xFF3F4948) else Color(0xFFDAE2FD)
 
     // On-surface
-    val OnSurface = Color(0xFF131B2E)
-    val OnSurfaceVariant = Color(0xFF3D4947)
+    val OnSurface get() = if (SmartAirThemeState.isDark) Color(0xFFE0E3E1) else Color(0xFF131B2E)
+    val OnSurfaceVariant get() = if (SmartAirThemeState.isDark) Color(0xFFBEC9C7) else Color(0xFF3D4947)
 
     // Inverse
-    val InverseSurface = Color(0xFF283044)
-    val InverseOnSurface = Color(0xFFEEF0FF)
-    val InversePrimary = Color(0xFF6BD8CB)
+    val InverseSurface get() = if (SmartAirThemeState.isDark) Color(0xFFE0E3E1) else Color(0xFF283044)
+    val InverseOnSurface get() = if (SmartAirThemeState.isDark) Color(0xFF191C1C) else Color(0xFFEEF0FF)
+    val InversePrimary get() = if (SmartAirThemeState.isDark) Color(0xFF00685F) else Color(0xFF6BD8CB)
 
     // Error
-    val Error = Color(0xFFBA1A1A)
-    val ErrorContainer = Color(0xFFFFDAD6)
-    val OnError = Color.White
-    val OnErrorContainer = Color(0xFF93000A)
+    val Error get() = if (SmartAirThemeState.isDark) Color(0xFFFFB4AB) else Color(0xFFBA1A1A)
+    val ErrorContainer get() = if (SmartAirThemeState.isDark) Color(0xFF93000A) else Color(0xFFFFDAD6)
+    val OnError get() = if (SmartAirThemeState.isDark) Color(0xFF690005) else Color.White
+    val OnErrorContainer get() = if (SmartAirThemeState.isDark) Color(0xFFFFDAD6) else Color(0xFF93000A)
 
     // Outline
-    val Outline = Color(0xFF6D7A77)
-    val OutlineVariant = Color(0xFFBCC9C6)
+    val Outline get() = if (SmartAirThemeState.isDark) Color(0xFF899391) else Color(0xFF6D7A77)
+    val OutlineVariant get() = if (SmartAirThemeState.isDark) Color(0xFF3F4948) else Color(0xFFBCC9C6)
 
     // Status colors (from Stitch design system)
-    val StatusOptimal = Color(0xFF10B981)   // Emerald
-    val StatusWarning = Color(0xFFF59E0B)   // Amber
-    val StatusCritical = Color(0xFFEF4444)  // Red
+    val StatusOptimal get() = Color(0xFF10B981)   // Emerald
+    val StatusWarning get() = Color(0xFFF59E0B)   // Amber
+    val StatusCritical get() = Color(0xFFEF4444)  // Red
 
     // Accent / brand
-    val BrandAccent = Color(0xFF0D9488)     // Teal 600
-    val BrandHighlight = Color(0xFF14B8A6)  // Teal 500
+    val BrandAccent get() = if (SmartAirThemeState.isDark) Color(0xFF2DD4BF) else Color(0xFF0D9488)     // Teal 600
+    val BrandHighlight get() = if (SmartAirThemeState.isDark) Color(0xFF5EEAD4) else Color(0xFF14B8A6)  // Teal 500
 
     // Fixed
     val PrimaryFixed = Color(0xFF89F5E7)
@@ -85,7 +94,7 @@ object SmartAirColors {
     val TertiaryFixed = Color(0xFF9CF2E8)
 }
 
-// Material 3 color scheme using Stitch palette
+// Material 3 color scheme using Stitch palette (Light)
 val SmartAirLightColors = lightColorScheme(
     primary = SmartAirColors.Primary,
     primaryContainer = SmartAirColors.PrimaryContainer,
@@ -111,6 +120,34 @@ val SmartAirLightColors = lightColorScheme(
     outlineVariant = SmartAirColors.OutlineVariant,
     background = SmartAirColors.Surface,
     onBackground = SmartAirColors.OnSurface,
+)
+
+// Material 3 color scheme using Stitch palette (Dark)
+val SmartAirDarkColors = darkColorScheme(
+    primary = SmartAirColors.PrimaryFixed,
+    primaryContainer = Color(0xFF004F47),
+    onPrimary = Color(0xFF003731),
+    onPrimaryContainer = SmartAirColors.PrimaryFixed,
+    secondary = SmartAirColors.SecondaryFixed,
+    secondaryContainer = Color(0xFF005047),
+    onSecondaryContainer = SmartAirColors.SecondaryFixed,
+    tertiary = SmartAirColors.TertiaryFixed,
+    tertiaryContainer = Color(0xFF00504B),
+    surface = Color(0xFF191C1C),
+    surfaceVariant = Color(0xFF3F4948),
+    onSurface = Color(0xFFE0E3E1),
+    onSurfaceVariant = Color(0xFFBEC9C7),
+    inverseSurface = Color(0xFFE0E3E1),
+    inverseOnSurface = Color(0xFF191C1C),
+    inversePrimary = SmartAirColors.Primary,
+    error = Color(0xFFFFB4AB),
+    errorContainer = Color(0xFF93000A),
+    onError = Color(0xFF690005),
+    onErrorContainer = Color(0xFFFFDAD6),
+    outline = Color(0xFF899391),
+    outlineVariant = Color(0xFF3F4948),
+    background = Color(0xFF191C1C),
+    onBackground = Color(0xFFE0E3E1),
 )
 
 // Typography matching Stitch's Plus Jakarta Sans system
@@ -186,9 +223,18 @@ val SmartAirTypography = Typography(
 )
 
 @Composable
-fun SmartAirTheme(content: @Composable () -> Unit) {
+fun SmartAirTheme(
+    darkTheme: Boolean = isSystemInDarkTheme(),
+    content: @Composable () -> Unit
+) {
+    val colorScheme = if (darkTheme) {
+        SmartAirDarkColors
+    } else {
+        SmartAirLightColors
+    }
+
     MaterialTheme(
-        colorScheme = SmartAirLightColors,
+        colorScheme = colorScheme,
         typography = SmartAirTypography,
         content = content
     )

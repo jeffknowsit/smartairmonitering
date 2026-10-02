@@ -19,6 +19,13 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
+
+        val properties = java.util.Properties()
+        val localProperties = project.rootProject.file("local.properties")
+        if (localProperties.exists()) {
+            properties.load(localProperties.inputStream())
+        }
+        buildConfigField("String", "GEMINI_API_KEY", "\"${properties.getProperty("GEMINI_API_KEY", "")}\"")
     }
 
     buildTypes {
@@ -39,6 +46,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.8"
@@ -89,6 +97,9 @@ dependencies {
 
     // Google Fonts for Compose
     implementation("androidx.compose.ui:ui-text-google-fonts:1.6.1")
+    
+    // Google Gemini AI SDK
+    implementation("com.google.ai.client.generativeai:generativeai:0.2.2")
 
     // Debug
     debugImplementation("androidx.compose.ui:ui-tooling")

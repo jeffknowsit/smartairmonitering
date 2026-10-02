@@ -37,6 +37,12 @@ fun SettingsScreen(
     onBack: () -> Unit,
     modifier: Modifier = Modifier
 ) {
+    var showRoomDialog by remember { mutableStateOf(false) }
+    var showDustDialog by remember { mutableStateOf(false) }
+    var showGasDialog by remember { mutableStateOf(false) }
+    var showContextDialog by remember { mutableStateOf(false) }
+    var showAppearanceDialog by remember { mutableStateOf(false) }
+
     val scrollState = rememberScrollState()
 
     Column(
@@ -71,7 +77,8 @@ fun SettingsScreen(
                 title = "Room",
                 trailing = {
                     SettingsValueChevron(value = settings.roomName)
-                }
+                },
+                onClick = { showRoomDialog = true }
             )
             SettingsToggleRow(
                 icon = Icons.Outlined.Usb,
@@ -119,7 +126,8 @@ fun SettingsScreen(
                         value = settings.dustWarningThreshold.toString(),
                         isMono = true
                     )
-                }
+                },
+                onClick = { showDustDialog = true }
             )
             SettingsRow(
                 icon = Icons.Outlined.Cloud,
@@ -129,7 +137,8 @@ fun SettingsScreen(
                         value = settings.gasWarningThreshold.toString(),
                         isMono = true
                     )
-                }
+                },
+                onClick = { showGasDialog = true }
             )
             // SMS Settings
             SettingsToggleRow(
@@ -185,7 +194,8 @@ fun SettingsScreen(
                 title = "Context Window",
                 trailing = {
                     SettingsValueChevron(value = "Last ${settings.aiContextWindowHours} hours")
-                }
+                },
+                onClick = { showContextDialog = true }
             )
         }
 
@@ -198,7 +208,8 @@ fun SettingsScreen(
                 title = "Appearance",
                 trailing = {
                     SettingsValueChevron(value = settings.appearance)
-                }
+                },
+                onClick = { showAppearanceDialog = true }
             )
             SettingsToggleRow(
                 icon = Icons.Outlined.Visibility,
@@ -270,6 +281,139 @@ fun SettingsScreen(
         }
 
         Spacer(modifier = Modifier.height(32.dp))
+    }
+
+    if (showRoomDialog) {
+        var text by remember { mutableStateOf(settings.roomName) }
+        AlertDialog(
+            onDismissRequest = { showRoomDialog = false },
+            title = { Text("Room Name") },
+            text = {
+                OutlinedTextField(
+                    value = text,
+                    onValueChange = { text = it },
+                    singleLine = true
+                )
+            },
+            confirmButton = {
+                TextButton(onClick = {
+                    onSettingsChange(settings.copy(roomName = text))
+                    showRoomDialog = false
+                }) { Text("Save") }
+            },
+            dismissButton = {
+                TextButton(onClick = { showRoomDialog = false }) { Text("Cancel") }
+            }
+        )
+    }
+
+    if (showDustDialog) {
+        var text by remember { mutableStateOf(settings.dustWarningThreshold.toString()) }
+        AlertDialog(
+            onDismissRequest = { showDustDialog = false },
+            title = { Text("Dust Warning Level") },
+            text = {
+                OutlinedTextField(
+                    value = text,
+                    onValueChange = { text = it },
+                    singleLine = true
+                )
+            },
+            confirmButton = {
+                TextButton(onClick = {
+                    text.toIntOrNull()?.let { onSettingsChange(settings.copy(dustWarningThreshold = it)) }
+                    showDustDialog = false
+                }) { Text("Save") }
+            },
+            dismissButton = {
+                TextButton(onClick = { showDustDialog = false }) { Text("Cancel") }
+            }
+        )
+    }
+
+    if (showGasDialog) {
+        var text by remember { mutableStateOf(settings.gasWarningThreshold.toString()) }
+        AlertDialog(
+            onDismissRequest = { showGasDialog = false },
+            title = { Text("MQ-5 Gas Warning Level") },
+            text = {
+                OutlinedTextField(
+                    value = text,
+                    onValueChange = { text = it },
+                    singleLine = true
+                )
+            },
+            confirmButton = {
+                TextButton(onClick = {
+                    text.toIntOrNull()?.let { onSettingsChange(settings.copy(gasWarningThreshold = it)) }
+                    showGasDialog = false
+                }) { Text("Save") }
+            },
+            dismissButton = {
+                TextButton(onClick = { showGasDialog = false }) { Text("Cancel") }
+            }
+        )
+    }
+
+    if (showContextDialog) {
+        var text by remember { mutableStateOf(settings.aiContextWindowHours.toString()) }
+        AlertDialog(
+            onDismissRequest = { showContextDialog = false },
+            title = { Text("Context Window (Hours)") },
+            text = {
+                OutlinedTextField(
+                    value = text,
+                    onValueChange = { text = it },
+                    singleLine = true
+                )
+            },
+            confirmButton = {
+                TextButton(onClick = {
+                    text.toIntOrNull()?.let { onSettingsChange(settings.copy(aiContextWindowHours = it)) }
+                    showContextDialog = false
+                }) { Text("Save") }
+            },
+            dismissButton = {
+                TextButton(onClick = { showContextDialog = false }) { Text("Cancel") }
+            }
+        )
+    }
+    
+    if (showAppearanceDialog) {
+        AlertDialog(
+            onDismissRequest = { showAppearanceDialog = false },
+            title = { Text("Appearance") },
+            text = {
+                Column {
+                    listOf("System Default", "Light", "Dark").forEach { option ->
+                        Row(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .clickable {
+                                    onSettingsChange(settings.copy(appearance = option))
+                                    showAppearanceDialog = false
+                                }
+                                .padding(vertical = 12.dp),
+                            verticalAlignment = Alignment.CenterVertically
+                        ) {
+                            RadioButton(
+                                selected = settings.appearance == option,
+                                onClick = {
+                                    onSettingsChange(settings.copy(appearance = option))
+                                    showAppearanceDialog = false
+                                }
+                            )
+                            Spacer(modifier = Modifier.width(8.dp))
+                            Text(text = option)
+                        }
+                    }
+                }
+            },
+            confirmButton = {},
+            dismissButton = {
+                TextButton(onClick = { showAppearanceDialog = false }) { Text("Cancel") }
+            }
+        )
     }
 }
 
@@ -493,12 +637,13 @@ private fun SettingsSection(
 private fun SettingsRow(
     icon: ImageVector,
     title: String,
-    trailing: @Composable () -> Unit = {}
+    trailing: @Composable () -> Unit = {},
+    onClick: () -> Unit = {}
 ) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
-            .clickable { }
+            .clickable { onClick() }
             .padding(horizontal = 16.dp, vertical = 14.dp),
         horizontalArrangement = Arrangement.SpaceBetween,
         verticalAlignment = Alignment.CenterVertically
